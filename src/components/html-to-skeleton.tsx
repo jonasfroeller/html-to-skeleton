@@ -15,7 +15,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   button: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-10 w-24", getResponsiveClasses(el))} />
@@ -25,7 +25,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   card: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("rounded-lg p-6", getResponsiveClasses(el))} />
@@ -33,7 +33,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   "card-header": (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-16 w-full mb-4", getResponsiveClasses(el))} />
@@ -41,7 +41,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   "card-content": (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-32 w-full", getResponsiveClasses(el))} />
@@ -49,7 +49,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   "card-footer": (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-12 w-full mt-4", getResponsiveClasses(el))} />
@@ -59,7 +59,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   input: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-10 w-full", getResponsiveClasses(el))} />
@@ -67,7 +67,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   textarea: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-24 w-full", getResponsiveClasses(el))} />
@@ -75,7 +75,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   select: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-10 w-full", getResponsiveClasses(el))} />
@@ -85,7 +85,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   avatar: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-10 w-10 rounded-full", getResponsiveClasses(el))} />
@@ -95,7 +95,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   badge: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-6 w-16 rounded-full", getResponsiveClasses(el))} />
@@ -105,7 +105,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   alert: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-16 w-full rounded-lg", getResponsiveClasses(el))} />
@@ -115,7 +115,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   table: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-64 w-full", getResponsiveClasses(el))} />
@@ -123,7 +123,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   "table-row": (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-12 w-full mb-2", getResponsiveClasses(el))} />
@@ -131,7 +131,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   "table-cell": (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-8 flex-1 mr-2", getResponsiveClasses(el))} />
@@ -141,7 +141,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   nav: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-16 w-full", getResponsiveClasses(el))} />
@@ -150,7 +150,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   breadcrumb: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-6 w-48", getResponsiveClasses(el))} />
@@ -160,7 +160,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   dialog: (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-96 w-96 rounded-lg", getResponsiveClasses(el))} />
@@ -168,7 +168,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   "dialog-header": (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-12 w-full mb-4", getResponsiveClasses(el))} />
@@ -176,7 +176,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   "dialog-content": (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-48 w-full", getResponsiveClasses(el))} />
@@ -184,7 +184,7 @@ const SHADCN_COMPONENT_MAP: Record<string, (element: Element, detailed: boolean)
   "dialog-footer": (el, detailed) => {
     if (detailed) {
       const dims = getElementDimensions(el)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton className={getResponsiveClasses(el)} style={style} />
     }
     return <Skeleton className={cn("h-12 w-full mt-4", getResponsiveClasses(el))} />
@@ -264,7 +264,7 @@ function getElementDimensions(element: Element) {
   }
 }
 
-function getDimensionStyles(dimensions: ReturnType<typeof getElementDimensions>, detailed: boolean) {
+function getDimensionStyles(dimensions: ReturnType<typeof getElementDimensions>) {
   const style: React.CSSProperties = {
     width: `${dimensions.width}px`,
     height: `${dimensions.height}px`,
@@ -288,7 +288,7 @@ function generateTextSkeleton(element: Element, detailed: boolean): React.ReactN
 
   if (detailed) {
     const dims = getElementDimensions(element)
-    const { style } = getDimensionStyles(dims, true)
+    const { style } = getDimensionStyles(dims)
     return <Skeleton style={style} className={getResponsiveClasses(element)} />
   }
 
@@ -394,7 +394,7 @@ function convertElementToSkeleton(element: Element, key: string, detailed: boole
 
     if (detailed) {
       const dims = getElementDimensions(element)
-      const { style } = getDimensionStyles(dims, true)
+      const { style } = getDimensionStyles(dims)
       return <Skeleton key={key} style={style} className={getResponsiveClasses(element)} />
     }
 
