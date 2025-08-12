@@ -281,7 +281,7 @@ export default function App() {
                 <div className="flex items-center justify-between gap-2 border-b px-3 py-2 bg-muted/40">
                   <div className="text-xs text-muted-foreground">input.html</div>
                 </div>
-                <div className="flex-1 min-h-0 overflow-hidden">
+                <div className="flex-1 min-h-0 overflow-auto">
                   <CodeMirror
                     value={htmlInput}
                     theme="light"
