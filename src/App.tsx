@@ -301,12 +301,14 @@ export default function App() {
               </div>
             </TabsContent>
             <TabsContent value="preview" className="mt-4 flex-1 min-h-0">
-              <div
-                ref={htmlPreviewRef}
-                onScroll={handleHtmlScroll}
-                className="border rounded-lg p-4 h-full bg-background overflow-auto"
-              >
-                <div dangerouslySetInnerHTML={{ __html: htmlInput }} />
+              <div className="border rounded-lg h-full bg-background overflow-hidden">
+                <div
+                  ref={htmlPreviewRef}
+                  onScroll={handleHtmlScroll}
+                  className="p-4 h-full overflow-auto"
+                >
+                  <div dangerouslySetInnerHTML={{ __html: htmlInput }} />
+                </div>
               </div>
             </TabsContent>
           </Tabs>
@@ -320,12 +322,14 @@ export default function App() {
               <TabsTrigger value="code">{codeFormat === "jsx" ? "JSX Code" : "HTML Code"}</TabsTrigger>
             </TabsList>
             <TabsContent value="preview" className="mt-4 flex-1 min-h-0">
-              <div
-                ref={skeletonPreviewRef}
-                onScroll={handleSkeletonScroll}
-                className="border rounded-lg p-4 h-full bg-background overflow-auto"
-              >
-                <HtmlToSkeletonConverter htmlInput={htmlInput} maxDepth={maxDepth} visibleOnly={visibleOnly} codeFormat={codeFormat} componentName={componentName} />
+              <div className="border rounded-lg h-full bg-background overflow-hidden">
+                <div
+                  ref={skeletonPreviewRef}
+                  onScroll={handleSkeletonScroll}
+                  className="p-4 h-full overflow-auto"
+                >
+                  <HtmlToSkeletonConverter htmlInput={htmlInput} maxDepth={maxDepth} visibleOnly={visibleOnly} codeFormat={codeFormat} componentName={componentName} />
+                </div>
               </div>
             </TabsContent>
             <TabsContent value="code" className="mt-4 flex-1 min-h-0">
