@@ -155,3 +155,17 @@
 .cm-borderless .cm-scroller {
   border-radius: inherit;
 }
+
+/* ensure arbitrary HTML in previews doesn't force page-wide overflow */
+.preview-content { min-width: 0; }
+.preview-content *,
+.preview-content *::before,
+.preview-content *::after { box-sizing: border-box; }
+.preview-content img,
+.preview-content svg,
+.preview-content canvas,
+.preview-content video,
+.preview-content table { max-width: 100%; height: auto; }
+.preview-content pre { overflow-x: auto; max-width: 100%; }
+.preview-content code { white-space: pre; }
+.preview-content iframe { max-width: 100%; }

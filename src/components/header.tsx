@@ -1,8 +1,8 @@
 export function Header() {
   return (
-    <header id="app-header" className="sticky top-0 z-10 p-4 text-white bg-gray-800">
-      <div className="flex items-center justify-between mx-auto max-w-6xl">
-        <div className="text-xl">HTML to Skeleton Converter</div>
+    <header id="app-header" className="sticky top-0 z-10 bg-gray-800 text-white px-4 sm:px-6 lg:px-8 py-3">
+      <div className="mx-auto max-w-6xl flex items-center justify-between gap-3">
+        <div className="text-lg sm:text-xl">HTML to Skeleton Converter</div>
         <a
           href="https://github.com/jonasfroeller/html-to-skeleton"
           target="_blank"

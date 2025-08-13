@@ -22,19 +22,19 @@ import {
 } from "@/components/ui/select"
 
 const EXAMPLE_HTML = `<div class="max-w-4xl mx-auto space-y-6 p-6">
-  <div class="flex items-center justify-between">
+  <div class="flex items-center justify-between gap-4 sm:gap-6">
     <div class="flex items-center space-x-4">
-      <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+      <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center shrink-0 flex-none">
         <span class="text-white font-semibold">JD</span>
       </div>
       <div>
-        <h1 class="text-2xl font-bold text-gray-900">John Doe</h1>
-        <p class="text-gray-600">Senior Product Designer</p>
+        <h1 class="text-2xl font-bold text-gray-900 whitespace-nowrap">John Doe</h1>
+        <p class="text-gray-600 whitespace-nowrap">Senior Product Designer</p>
       </div>
     </div>
     <div class="flex space-x-2">
-      <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Edit Profile</button>
-      <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50">Settings</button>
+      <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 whitespace-nowrap shrink-0">Edit Profile</button>
+      <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 whitespace-nowrap shrink-0">Settings</button>
     </div>
   </div>
 
@@ -211,19 +211,19 @@ export default function App() {
   }, [htmlInput])
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex min-h-0 flex-grow w-full max-w-full mx-auto p-8">
+      <main className="flex min-h-0 flex-1 w-full max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 overflow-y-auto">
       <div className="flex h-full min-h-0 w-full flex-col">
-      <div className="text-center space-y-4 mb-8 shrink-0">
-        <h1 className="text-4xl font-bold">HTML to Skeleton Converter</h1>
-        <p className="text-lg text-muted-foreground">
+      <div className="text-center space-y-4 mb-6 sm:mb-8 shrink-0">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">HTML to Skeleton Converter</h1>
+        <p className="text-sm sm:text-base lg:text-lg text-muted-foreground">
           Paste Tailwind-styled HTML to generate a React skeleton component with live preview-, output uses Tailwind classes too.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <div className="flex flex-wrap items-center justify-center gap-4 w-full md:w-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full md:w-auto">
             <Label className="whitespace-nowrap">Layers</Label>
-            <div className="min-w-[200px] w-[240px] max-w-[320px]">
+            <div className="w-full sm:min-w-[200px] sm:w-[240px] sm:max-w-[320px]">
               <Slider
                 value={[maxDepth]}
                 onValueChange={(v) => setMaxDepth(Math.min(computedMaxDepth, Math.max(1, v[0] ?? 1)))}
@@ -258,30 +258,30 @@ export default function App() {
                 onChange={(e) => setComponentName(e.target.value)}
                 disabled={codeFormat !== "jsx"}
                 placeholder="Skeleton"
-                className="h-9 w-40 rounded-md border px-3 text-sm bg-background disabled:opacity-50"
+                className="h-9 w-full sm:w-40 rounded-md border px-3 text-sm bg-background disabled:opacity-50"
               />
             </div>
           </div>
-          <Button variant="outline" onClick={loadExample} className="shrink-0">
+          <Button variant="outline" onClick={loadExample} className="shrink-0 w-full sm:w-auto">
             Load Example
           </Button>
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-8 flex-1 min-h-0">
-        <div className="flex h-full min-h-0 flex-col space-y-4 lg:col-span-2">
+      <div className="grid gap-6 sm:gap-8 2xl:grid-cols-2 flex-1 min-h-0">
+        <div className="flex h-full min-h-0 min-w-0 flex-col space-y-4">
           <Label className="text-lg font-semibold">Input</Label>
-          <Tabs defaultValue="input" className="w-full h-full min-h-0 flex flex-col">
+          <Tabs defaultValue="input" className="w-full h-full min-h-0 min-w-0 flex flex-col">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="input">HTML Input</TabsTrigger>
               <TabsTrigger value="preview">HTML Preview</TabsTrigger>
             </TabsList>
             <TabsContent value="input" className="mt-4 flex-1 min-h-0">
-              <div className="border rounded-lg h-full flex flex-col min-h-0 bg-background overflow-hidden">
+              <div className="border rounded-lg h-full flex flex-col min-h-0 min-w-0 bg-background overflow-hidden">
                 <div className="flex items-center justify-between gap-2 border-b px-3 py-2 bg-muted/40">
                   <div className="text-xs text-muted-foreground">input.html</div>
                 </div>
-                <div className="flex-1 min-h-0 overflow-auto">
+                <div className="flex-1 min-h-0 min-w-0 overflow-x-auto overflow-y-auto">
                   <CodeMirror
                     value={htmlInput}
                     theme="light"
@@ -305,18 +305,18 @@ export default function App() {
                 <div
                   ref={htmlPreviewRef}
                   onScroll={handleHtmlScroll}
-                  className="p-4 h-full overflow-auto"
+                  className="p-3 sm:p-4 h-full overflow-x-auto overflow-y-auto"
                 >
-                  <div dangerouslySetInnerHTML={{ __html: htmlInput }} />
+                  <div className="preview-content" dangerouslySetInnerHTML={{ __html: htmlInput }} />
                 </div>
               </div>
             </TabsContent>
           </Tabs>
         </div>
 
-        <div className="flex h-full min-h-0 flex-col space-y-4">
+        <div className="flex h-full min-h-0 min-w-0 flex-col space-y-4">
           <Label className="text-lg font-semibold">Output</Label>
-          <Tabs defaultValue="preview" className="w-full h-full min-h-0 flex flex-col">
+          <Tabs defaultValue="preview" className="w-full h-full min-h-0 min-w-0 flex flex-col">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="preview">Preview</TabsTrigger>
               <TabsTrigger value="code">{codeFormat === "jsx" ? "JSX Code" : "HTML Code"}</TabsTrigger>
@@ -326,14 +326,16 @@ export default function App() {
                 <div
                   ref={skeletonPreviewRef}
                   onScroll={handleSkeletonScroll}
-                  className="p-4 h-full overflow-auto"
+                  className="p-3 sm:p-4 h-full overflow-x-auto overflow-y-auto"
                 >
-                  <HtmlToSkeletonConverter htmlInput={htmlInput} maxDepth={maxDepth} visibleOnly={visibleOnly} codeFormat={codeFormat} componentName={componentName} />
+                  <div className="preview-content">
+                    <HtmlToSkeletonConverter htmlInput={htmlInput} maxDepth={maxDepth} visibleOnly={visibleOnly} codeFormat={codeFormat} componentName={componentName} />
+                  </div>
                 </div>
               </div>
             </TabsContent>
             <TabsContent value="code" className="mt-4 flex-1 min-h-0">
-              <div className="border rounded-lg h-full flex flex-col min-h-0 overflow-hidden bg-background">
+              <div className="border rounded-lg h-full flex flex-col min-h-0 min-w-0 overflow-hidden bg-background">
                 <div className="flex items-center justify-between gap-2 border-b px-3 py-2 bg-muted/40">
                   <div className="text-xs text-muted-foreground">
                     {toDashedLower(componentName || "component") + (codeFormat === "jsx" ? ".tsx" : ".html")}
@@ -347,7 +349,7 @@ export default function App() {
                     </Button>
                   </div>
                 </div>
-                <div className="flex-1 min-h-0 overflow-auto">
+                <div className="flex-1 min-h-0 min-w-0 overflow-x-auto overflow-y-auto">
                   <HtmlToSkeletonConverter
                     htmlInput={htmlInput}
                     maxDepth={maxDepth}

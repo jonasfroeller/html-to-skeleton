@@ -1,12 +1,12 @@
 export function Footer() {
   return (
-    <footer id="app-footer" className="p-4 text-sm text-center text-gray-700 bg-gray-200">
+    <footer id="app-footer" className="px-4 sm:px-6 lg:px-8 py-3 text-xs sm:text-sm text-center text-gray-700 bg-gray-200">
       <div className="flex flex-col items-center justify-between mx-auto space-y-2 max-w-6xl sm:flex-row sm:space-y-0">
         <div className="flex items-center space-x-2">
           <img
             src="https://avatars.githubusercontent.com/u/121523551?v=4"
             alt="Jonas Fröller"
-            className="w-6 h-6 rounded-full"
+            className="w-5 h-5 sm:w-6 sm:h-6 rounded-full"
             loading="lazy"
           />
           <span>
@@ -22,7 +22,7 @@ export function Footer() {
           </span>
         </div>
         <div className="flex items-center space-x-2">
-          <img src="https://merginit.com/favicon.png" alt="Imprint" className="w-6 h-6" loading="lazy" />
+          <img src="https://merginit.com/favicon.png" alt="Imprint" className="w-5 h-5 sm:w-6 sm:h-6" loading="lazy" />
           <a
             href="https://merginit.com/legal/imprint"
             target="_blank"
